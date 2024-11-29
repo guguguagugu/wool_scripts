@@ -25,9 +25,6 @@ if (
       ) {
         continue;
       }
-      if ([10002, 10003].includes(item?.feedType)) {
-        continue;
-      }
       newList.push(item);
     }
     obj.data.list = newList;
