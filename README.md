@@ -144,7 +144,7 @@
 | # | 规则   | `去广告合集`            | [rejectAd.plugin](https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list)       | [fmz200](https://github.com/fmz200) | 从QX的分流去广告转换而来                      | 暂无   |
 | # | 规则   | `AI分流规则合集`         | [AI.list](https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/AI.list)                     | [fmz200](https://github.com/fmz200) | 汇集常用的AI模型                          | 暂无   |
 | # | 规则   | `屏蔽苹果系统更新`         | [apple_update.list](https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/apple_update.list) | [fmz200](https://github.com/fmz200) | 无                                  | 暂无   |
-| # | 插件   | `去广告合集 guguguagugu`            | [blockAds.plugin](https://github.com/guguguagugu/wool_scripts/raw/main/Loon/plugin/blockAds.plugin)   | [fmz200](https://github.com/fmz200) | (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截，修改了自用部分  | 暂无   |
+| # | 插件   | `去广告合集 guguguagugu`            | [blockAds.plugin](https://github.com/guguguagugu/wool_scripts/raw/main/Loon/plugin/blockAds-guguguagugu.plugin)   | [fmz200](https://github.com/fmz200) | (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截，修改了自用部分  | 暂无   |
 
 
 ### 3️⃣ Surge配置
