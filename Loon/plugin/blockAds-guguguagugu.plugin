@@ -9,7 +9,7 @@
 #!system=iOS, iPadOS
 #!system_version = 
 #!loon_version = 
-#!date=2024-11-24 22:30:00
+#!date=2024-11-30 22:00:00
 #!support=支持约511款APP/小程序
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 #############################################
@@ -1516,6 +1516,11 @@ https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSpl
 # hostname = api-ac.liepin.com, api-wanda.liepin.com
 ^https?:\/\/api-ac\.liepin\.com\/api\/com\.liepin\.cyclops\.live\.get-ad-cards reject-dict
 ^https?:\/\/api-wanda\.liepin\.com\/api\/com\.liepin\.cbp\.baizhong\.op\.v2-show-4app reject-200
+
+# > 鲁班到家用户版
+# hostname = order-app-api.lbdj.com
+# 去开屏广告
+^https:\/\/order-app-api\.lbdj\.com\/lbdj\/apporder\/ad\/ reject-dict
 
 
 
