@@ -150,24 +150,6 @@
 > ⚠️ 当远程图标更新时如果你的图表库不更新多半是缓存的问题，请手动清理图标缓存(`点击右下角风车->划到最下面->选择其他设置->找到资源模块`，选择`删除图片缓存`)，并重启 Quantumult X，远程图标会重新下载并生效。
 
 
-### 2️⃣ Loon配置
-
-> 📍 除下方已经转为Loon的配置，你可以借助 [Script-Hub：重写 & 规则集转换](https://github.com/Script-Hub-Org/Script-Hub) 工具将上方的QX重写和分流添加到Loon中。
-
-| # | 配置类型 | 配置名称               | 配置链接                                                                                             | 作者                                  | 特别说明                               | 使用教程 |
-|---|------|--------------------|--------------------------------------------------------------------------------------------------|-------------------------------------|------------------------------------|------|
-| # | 全局配置 | `懒人配置`             | [Loon.conf](https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/config/Loon.conf)    | [fmz200](https://github.com/fmz200) | 下载此文件会覆盖原本所有配置，小白慎用                | 暂无   |
-| # | 插件   | `微博去广告`            | [weibo.plugin](https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/weibo.plugin)         | [fmz200](https://github.com/fmz200) | 可能有遗漏                              | 暂无   |
-| # | 插件   | `去广告合集`            | [blockAds.plugin](https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin)   | [fmz200](https://github.com/fmz200) | (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截  | 暂无   |
-| # | 插件   | `获取cookie&token合集` | [cookies.plugin](https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/cookies.plugin)     | [fmz200](https://github.com/fmz200) | 包含fmz200/NobyDa/chavyleung/Sunert等 | 暂无   |
-| # | 脚本   | `Task订阅`           | [tasks.scripts](https://github.com/fmz200/wool_scripts/raw/main/Loon/script/tasks.scripts)       | [fmz200](https://github.com/fmz200) | 需要先获取cookie或token再运行               | 暂无   |
-| # | 脚本   | `工具合集`             | [tools.scripts](https://github.com/fmz200/wool_scripts/raw/main/Loon/script/tools.scripts)       | [fmz200](https://github.com/fmz200) | 节点测试工具，导入后长按节点使用                   | 暂无   |
-| # | 规则   | `去广告合集`            | [rejectAd.plugin](https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list)       | [fmz200](https://github.com/fmz200) | 从QX的分流去广告转换而来                      | 暂无   |
-| # | 规则   | `AI分流规则合集`         | [AI.list](https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/AI.list)                     | [fmz200](https://github.com/fmz200) | 汇集常用的AI模型                          | 暂无   |
-| # | 规则   | `屏蔽苹果系统更新`         | [apple_update.list](https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/apple_update.list) | [fmz200](https://github.com/fmz200) | 无                                  | 暂无   |
-| # | 插件   | `去广告合集 guguguagugu`            | [blockAds.plugin](https://github.com/guguguagugu/wool_scripts/raw/main/Loon/plugin/blockAds-guguguagugu.plugin)   | [fmz200](https://github.com/fmz200) | (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截，修改了自用部分  | 暂无   |
-
-
 ### 3️⃣ Surge配置
 
 > 📍 你可以借助 [Script-Hub：重写 & 规则集转换](https://github.com/Script-Hub-Org/Script-Hub) 工具将上方的QX重写和分流添加到Surge中。
