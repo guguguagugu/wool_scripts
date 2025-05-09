@@ -5,7 +5,7 @@
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/NaiSi_01.png
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/script/tasks.scripts
 #!tg-group=https://t.me/lanjieguanggao
-#!date=2024-12-09 12:15:00
+#!date=2025-04-26 22:10:00
 #############################################
 # 配置语法 脚本默认执行超时时间200s
 # cron "0 8 * * *" script-path=cron.js,tag = cronScript,timeout = 300,argument = "1234",enable=true
@@ -19,7 +19,8 @@ cron "17 7 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/ma
 cron "17 7 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, tag=晓晓优选每日任务, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/xxyx_01.jpeg, enable=false
 cron "17 7 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/chery/cheryAppSignin.js, timeout=300, tag=奇瑞汽车App签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/chery.png, enable=false
 cron "15 7 * * *" script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/douyu/yubaSign.js, timeout=300, tag=斗鱼鱼吧签到, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/douyu.png, enable=false
-cron "19 7 * * *" script-path=https://raw.githubusercontent.com/toulanboy/scripts/master/weibo/weibotalk.js, timeout=300, tag=微博超话, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/WeiboTalk.png, enable=true
+cron "19 7 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_signin.js, timeout=300, tag=微博每日签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png, enable=false
+cron "19 7 * * *" script-path=https://raw.githubusercontent.com/toulanboy/scripts/master/weibo/weibotalk.js, timeout=300, tag=微博超话签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/WeiboTalk.png, enable=false
 cron "1 0 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=300, tag=高德地图打车签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/GaodeMap.jpg, enable=false
 #cron "25 7-12/1 * * *" script-path=https://raw.githubusercontent.com/WowYiJiu/Personal/main/Script/qqMusic.js, timeout=300, tag=QQ音乐任务, img-url=https://raw.githubusercontent.com/WowYiJiu/Personal/main/icon/Color/qqMusic.png, enable=false
 cron "18 0 8-22 * * ?" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/douyin/my_girl_video.js, timeout=300, tag=小姐姐视频, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/others/18Plus.png, enable=false
@@ -34,6 +35,9 @@ cron "22 10 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scr
 cron "0 10 * * *" script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js, timeout=300, tag=Gist备份, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BoxJS.png, enable=false
 cron "5 10 * * *" script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/restore.js, timeout=300, tag=Gist恢复, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BoxJS.png, enable=false
 cron "0 0 * * *" script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, timeout=300, tag=Sub-Store Sync, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/SubStore.png, enable=false
+
+# Zirawell
+cron "10 0 * * *" script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/CheckIn/flyert.js, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/flyert.png, enable=false, tag=飞客-签到
 
 # BoxJS
 cron "0 * * * *" script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Delete_All.js, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BoxJS.png, enable=false, tag=抹掉BoxJS全局备份
@@ -96,7 +100,7 @@ cron "50 4 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scr
 cron "0 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js, enable=false, tag=中国联通
 cron "10 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/maomicd/maomicd.js, enable=false, tag=猫咪音乐
 ;cron "20 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.js, enable=false, tag=中国移动
-cron "30 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.js, enable=false, tag= 美团外卖
+cron "30 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.js, enable=false, tag=美团外卖
 cron "40 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, enable=false, tag=美团
 cron "50 5 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/everphoto/everphoto.js, enable=false, tag=时光相册
 ;cron "0 6 8 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bcz/bcz.js, enable=false, tag=百词斩
@@ -203,12 +207,7 @@ cron "10 0/5 13-23 * * *" script-path=https://raw.githubusercontent.com/MeetaGit
 # makexp
 # cron "40 11 8 * * *" script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/xmly_wc.js, enable=false, tag=微信小程序-喜马拉雅
 
-# vinewx  https://ooxx.be/js/
-cron "0 9 * * *" script-path=https://ooxx.be/js/jegotrip.js, enable=false, tag=无忧行
-cron "0 9 * * *" script-path=https://ooxx.be/js/umer.js, enable=false, tag=优麦医生
-cron "0 18 * * *" script-path=https://ooxx.be/js/maoyan.js, enable=false, tag=猫眼
-
-#  chouchoui  https://github.com/chouchoui/QuanX/tree/master/Scripts
+# chouchoui  https://github.com/chouchoui/QuanX/tree/master/Scripts
 #cron "30 8,13,19 * * *" script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/angelalign/angelalign.task.js, enable=false, tag=时代天使
 cron "10 0 * * *" script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/nga/nga.js, enable=false, tag=NGA刮墙
 

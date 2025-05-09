@@ -1,11 +1,11 @@
 /**
  * @author @fmz200
- * @date 2025-03-30 20：00
+ * @date 2025-05-06 17:32
  * @function 微博每日签到，积分多了可以兑换现金
  * 
  * Loon：
  * [Script]
- * cron "0 8 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_signin.js, timeout=60, tag=微博签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png
+ * cron "0 8 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_signin.js, timeout=60, tag=微博每日签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png
  */
 
 const $ = new Env("微博签到");
@@ -22,22 +22,18 @@ startTasks().then(r => $.done());
 
 async function startTasks() {
   for (const item of jsonData) {
-    let signUrl = item.signin_url;
-    let weiboId = item.weibo_id;
-    let userInfo = await getUserInfo(weiboId, signUrl);
-    let username = userInfo.name || weiboId;
+    let userInfo = await getUserInfo(item.weibo_id, item.signin_url, item.headers);
+    if (!userInfo || userInfo.errno) {
+      console.log("通过URL获取的信息：" + userInfo);
+      $.msg('微博签到', `[${item.weibo_id}]签到失败，请重新获取签到URL`, '');
+      continue;
+    }
+    
+    let username = userInfo.name || item.weibo_id;
     let avatar = userInfo.avatar_hd || '';
 
-    const regex = /([^?#&=]+)=([^&#]*)/g;
-    let params = {};
-    let match;
-    while ((match = regex.exec(url.split('?')[1])) !== null) { // 提取query部分
-      const key = decodeURIComponent(match[1]);
-      const value = decodeURIComponent(match[2]);
-      params[key] = value;
-    }
-    console.log("params：" + params);
-    // const params = new URL(signUrl).searchParams;
+    let params = parseUrlParams(item.signin_url);
+    // console.log("params：" + params);
     let token = `from=${params.from}&uid=${params.uid}&s=${params.s}&gsid=${params.gsid}`;
     console.log("token：" + token);
     // 每日签到
@@ -49,31 +45,19 @@ async function startTasks() {
     
     $.msg('微博签到', `[${username}]本次运行结果：${successSign}`, '', {'open-url': '', 'media-url': avatar});
   }
-  // console.log(`脚本运行结束`);
+
   $.done();
 }
 
 // 获取用户信息，不是必须的
-function getUserInfo(weiboId, signUrl) {
+function getUserInfo(weiboId, signUrl, headers) {
   const options = {
-    url: `${signUrl}`,
-    headers: {
-      'x-validator': 'w6M3a8ykZn5HpVHikyRtKxZClarKWHS6eZhEk+fzs1c=',
-      'x-sessionid': 'CA9C6728-16D5-4FFE-A03C-5EBFFFEFE8D8',
-      'x-engine-type': 'cronet-114.0.5735.246',
-      'snrt': 'normal',
-      'authorization': 'WB-SUT _2A95K47-yDeRxGeNN6FEW8izJzz-IHXVnuLR6rDV6PUJbkdANLRT5kWpNSda9BXOhoLP8qagkUNT0ntR2qKlUDu5K',
-      'accept': '*/*',
-      'cronet_rid': '7580931',
-      'user-agent': 'Weibo/91850 (iPhone; iOS 18.4; Scale/3.00)',
-      'x-log-uid': `${weiboId}`,
-      'accept-language': 'ko-KR,ko,en-US,en',
-      'accept-encoding': 'gzip, deflate, br',
-    }
+    url: signUrl,
+    headers: headers
   };
 
   return $.http.get(options).then((resp) => {
-    // console.log("用户信息：" + resp.body);
+    console.log("用户信息：" + resp.body);
     return JSON.parse(resp.body);
   }).catch((err) => {
     $.log("🔴请求失败!", err);
@@ -92,9 +76,11 @@ function singIn(token) {
   return $.http.post(options).then((resp) => {
     $.log("接收到响应体：" + resp.body);
     let rsp_body = JSON.parse(resp.body);
-    let rspMsg = "";
+    let rspMsg;
     if (rsp_body.status === 10000) {
       rspMsg = `连续签到[${rsp_body.data.continuous}]天，本次收益[${rsp_body.data.title_style[0]}]积分`
+    } else if (rsp_body.errno === 30000) {
+      rspMsg = rsp_body.errmsg;
     } else {
       rspMsg = `每日签到: ${rsp_body.msg}`
     }
@@ -102,6 +88,32 @@ function singIn(token) {
   }).catch((err) => {
     $.log("🔴请求失败!", err);
   });
+}
+
+function parseUrlParams(url) {
+  const result = {};
+  // 步骤1：获取问号后的内容
+  const start = url.indexOf('?');
+  if (start === -1) return result;
+
+  // 步骤2：分割参数段
+  const query = url.slice(start + 1);
+  const pairs = query.split('&');
+
+  // 步骤3：遍历解析参数
+  for (let pair of pairs) {
+    // 处理空值并分割键值
+    const eqIndex = pair.indexOf('=');
+    if (eqIndex === -1) continue;
+
+    const key = pair.substring(0, eqIndex);
+    const value = pair.substring(eqIndex + 1);
+
+    // 解码并存储
+    result[decodeURIComponent(key)] = decodeURIComponent(value.replace(/\+/g, ' '));
+  }
+  console.log(result);
+  return result;
 }
 
 ////////////////////////////////
