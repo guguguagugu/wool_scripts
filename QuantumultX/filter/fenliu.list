@@ -5,7 +5,7 @@
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/gif/naisi-01.gif
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/filter/fenliu.list
 #!tg-group=https://t.me/lanjieguanggao
-#!date=2025-03-10 11:10:00
+#!date=2025-05-14 22:11:00
 #!support=约9392行
 #!proxy-select=reject
 #############################################
@@ -450,7 +450,10 @@ host-suffix, ad.duoduo.link, reject
 
 # > 盯盯拍 广告联盟已包含
 
-
+# > 叮咚买菜
+host, trackercollect.ddxq.mobi, reject
+host, ddfs-public.ddimg.mobi, reject
+host, rttrack.ddxq.mobi, reject
 
 # >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
 
@@ -803,6 +806,9 @@ host-suffix, d.meituan.net, reject
 # > 美颜相机 去首页和轮播广告
 host, adui.tg.meitu.com, reject
 host, aaid.uyunad.com, reject
+
+# > 美柚
+host, ad.seeyouyima.com, reject
 
 # > 买单吧
 host-suffix, c-hzgt2.getui.com, reject
@@ -1551,6 +1557,9 @@ host, 39d83s.com, reject
 
 # > 小利生活
 host-keyword, mpos-pic.helipay.com, reject
+
+# > 小爱音箱
+host, mistat.xiaomi.com, reject
 
 # > 晓晓优选
 host-SUFFIX, api-htp.beizi.biz, REJECT
